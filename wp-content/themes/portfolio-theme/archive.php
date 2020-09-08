@@ -10,7 +10,6 @@
 <main class="main-content">
   <div class="container">
     <h1 class="archive__title"><?php echo single_term_title(); ?></h1>
-
     <div class="archive__desc">
       <?php echo term_description();?>
     </div>
@@ -20,17 +19,20 @@
         <?php while (have_posts()) : the_post(); ?>
           <article class="article-block column">
             <a href="<?php the_permalink(); ?>">
-              <?php the_post_thumbnail(); ?>
-              <h2><?php the_title(); ?></h2>
+            <h2><?php the_title(); ?></h2>
+            <?php the_post_thumbnail(); ?>
             </a>
+            <?php the_excerpt();?>
           </article>
         <?php endwhile; ?>
       <?php else: ?>
-        <h2>Sorry, no post found</h2>
+        <h2>Sorry, no post(s) found</h2>
       <?php endif; ?>
     </div>
 
   </div>
+
 </main>
 
 <?php get_footer(); ?>
+

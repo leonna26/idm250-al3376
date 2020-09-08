@@ -15,7 +15,7 @@ body {
 body {
     margin: 0;
     padding: 0;
-    color: #394c4a;
+    color: black;
     font-family: 'Rubik', sans-serif;
     font-size: 1rem;
     font-weight: 300;
@@ -31,16 +31,17 @@ body {
     z-index: 1;
     -webkit-user-select: none;
     user-select: none;
+    color: white;
 }
 
 #menuToggle a {
     text-decoration: none;
-    color: #000000;
+    color: white;
     transition: color 0.3s ease;
 }
 
 #menuToggle a:hover {
-    color: rgb(66, 35, 70);
+    color: rgb(167, 133, 172);
 }
 
 #menuToggle input {
@@ -122,7 +123,8 @@ body {
 
 #menu {
     position: absolute;
-    width: 300px;
+    width: 600px;
+    height: 1000px;
     /* margin: -100px 0 0 -50px; */
     margin: -100px 0 0 -200px;
     padding: 50px;
@@ -140,6 +142,7 @@ body {
     padding: 10px 0;
     font-size: 22px;
     color: #eeeeee;
+    list-style-type: none;
 }
 
 
@@ -159,11 +162,12 @@ body {
 
 .heading ul {
     list-style-type: none;
-    margin-top: 42px;
-    margin-right: 72px;
-    margin-bottom: 50px;
+    /* margin-top: 42px; */
+    margin-left: 92px;
+    /* margin-bottom: 50px; */
     padding: 0;
     overflow: hidden;
+    display: flex;
 }
 
 .heading li {
@@ -188,7 +192,7 @@ body {
 }
 
 
-/* .heading .current {
+/* .heading .current
     color: #000000;
     border-bottom: 5px solid #55335D;
 } */
@@ -198,18 +202,15 @@ body {
     border-bottom: 4px solid #55335D;
 }
 
-.title {
-    position: fixed;
-    width: 226px;
-    height: 27px;
-    left: 72px;
-    top: 55px;
-    font-family: Roboto Mono;
-    font-style: normal;
+.webtitle {
+    margin-left: 100px;
+    margin-top: 20px;
+    font-family: 'Roboto Mono', monospace;
     font-weight: bold;
     font-size: 28px;
-    line-height: 33px;
     color: #000000;
+    display: inline-block;
+    text-transform: uppercase;
 }
 
 .about {
@@ -218,7 +219,7 @@ body {
     height: 439px;
     left: 709px;
     top: 130px;
-    font-family: Rubik;
+    font-family: 'Rubik', sans-serif;
     font-style: normal;
     font-weight: 300;
     font-size: 20px;
@@ -227,25 +228,15 @@ body {
 }
 
 .heading {
-    font-family: Roboto Mono;
+    font-family: 'Roboto Mono', monospace;
     font-style: 300;
     font-weight: 300;
     font-size: 24px;
     line-height: 28px;
     color: #111111;
     text-transform: uppercase;
-}
-
-@media screen and (min-width: 768px) {
-    nav {
-        display: none;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .heading {
-        display: none;
-    }
+    width: 1400px;
+    margin-bottom: 4em;
 }
 
 .container {
@@ -264,27 +255,33 @@ body {
 }
 
 #footer {
-    position: fixed;
     width: 598px;
     height: 25px;
     left: 72px;
-    top: 663px;
-    font-family: Roboto Mono;
+    font-family: 'Roboto Mono', monospace;
     font-style: normal;
     font-weight: 300;
     font-size: 16px;
     line-height: 19px;
     color: #111111;
+    padding: 20px 0 40px 0;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    width: 100%;
+    margin: auto;
+    text-align: center;
 }
 
-.footer-bar {
+
+/* .footer-bar {
     position: fixed;
     width: 610px;
     height: 11px;
     left: 825px;
     top: 670px;
     background: rgba(85, 51, 94, 0.3);
-}
+} */
 
 .page-builder {
     font-size: 18px;
@@ -302,7 +299,302 @@ body {
     height: 40%;
 }
 
-.menu-item menu-item-type-post_type menu-item-object-page menu-item {
+
+/* /* LAYOUTS */
+
+
+/* .split-sidebar {
+    display: flex;
+}
+
+.split-sidebar .column-main {
+    width: 70%;
+}
+
+.split-sidebar .column-sidebar {
+    width: 30%;
+}
+
+.split-3 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.split-3 .column {
+    width: 30%;
+    padding: 0 10px;
+} */
+
+*/ .wp-post-image {
+    width: 50%;
+    height: 50%;
+    display: inline-block;
+}
+
+.widgettitle {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.footer-menu {
+    width: 40%;
+}
+
+.social-menu {
+    position: fixed;
+    width: 598px;
+    height: 25px;
+    left: 72px;
+    top: 663px;
+    font-family: 'Roboto Mono';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 19px;
+    color: #111111;
     list-style-type: none;
+}
+
+.footer-menu .menu {
+    justify-content: initial;
+}
+
+.social-menu .menu {
+    justify-content: flex-end;
+}
+
+
+/* HOME PAGE */
+
+.hero {
+    padding: 100px 0;
+    /* background-image: url('../images/hero-home.jpg'); */
+    background-size: cover;
+    background-position: center;
+}
+
+.hero__content {
+    max-width: 60%;
+    margin: 5;
+    width: 100%;
+}
+
+.hero__heading {
+    font-size: 36px;
+    font-family: 'Rubik', sans-serif;
+    /* font-weight: bold; */
+}
+
+.hero__body {
+    margin-top: 10px;
+}
+
+.hero__cta {
+    display: inline-block;
+    font-family: 'Rubik', sans-serif;
+    display: inline-block;
+    padding: 10px 25px;
+    text-align: center;
+    background-color: white;
+    border-color: rgba(85, 51, 94, 0.3);
+    color: #000000;
+    text-decoration: none;
+}
+
+
+/* Buttons */
+
+.btn {
+    font-family: 'Roboto Mono', monospace;
+    font-weight: bold;
+    display: inline-block;
+    padding: 10px 25px;
+    text-align: center;
+    background-color: white;
+    border: 3px solid rgb(107, 79, 110);
+    color: #000000;
+    text-decoration: none;
+}
+
+.sbtn {
+    font-family: 'Roboto Mono', monospace;
+    font-weight: bold;
+    padding: 10px 25px;
+    text-align: center;
     color: white;
+    background-color: rgb(107, 79, 110);
+    border: none;
+    display: inline-block;
+}
+
+
+/* Media Block */
+
+.media-block {
+    display: flex;
+    margin-top: 50px;
+}
+
+.media-block__figure {
+    width: 50%;
+    padding-right: 100px;
+}
+
+.media-block__image {
+    width: 100%;
+}
+
+.media-block__content {
+    width: 50%;
+}
+
+.media-block__heading {
+    font-size: 22px;
+}
+
+.resume_content {
+    margin: 1.5rem;
+    margin-left: 15rem;
+    margin-right: 15rem;
+}
+
+.help {
+    margin: 1.5rem;
+    margin-left: 15rem;
+    margin-right: 15rem;
+}
+
+.main-content {
+    margin-left: 15rem;
+    margin-right: 15rem;
+}
+
+#searchField {
+    display: inline-block;
+    padding: 10px 25px;
+    background-color: white;
+    border: 3px solid rgb(182, 147, 185);
+    width: 25rem;
+}
+
+
+/* unvisited link */
+
+a:link {
+    color: #55335E;
+    text-decoration: none;
+}
+
+
+/* visited link */
+
+a:visited {
+    color: #55335E;
+    ;
+    text-decoration: none;
+}
+
+
+/* mouse over link */
+
+a:hover {
+    color: #a77ba1;
+    text-decoration: none;
+}
+
+
+/* selected link */
+
+a:active {
+    color: #55335E;
+}
+
+@media screen and (min-width: 800px) {
+    nav {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .heading {
+        display: none;
+    }
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 3%;
+    }
+    .main-content {
+        margin-left: 8rem;
+        margin-right: 8rem;
+        max-width: 1000px;
+    }
+    .help {
+        margin-left: 8rem;
+        margin-right: 8rem;
+        max-width: 1000px;
+    }
+    #searchField {
+        display: inline-block;
+        padding: 10px 15px;
+        background-color: white;
+        border: 3px solid rgb(182, 147, 185);
+        width: 20rem;
+    }
+    .sbtn {
+        font-family: 'Roboto Mono', monospace;
+        font-weight: bold;
+        padding: 10px 10px;
+        text-align: center;
+        color: white;
+        background-color: rgb(107, 79, 110);
+        border: none;
+        display: inline-block;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .container {
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 0 3%;
+    }
+    .resume_content {
+        margin-left: 5rem;
+        margin-right: 5rem;
+        max-width: 600px;
+        font-size: 14px;
+    }
+    .main-content {
+        margin-left: 5rem;
+        margin-right: 5rem;
+        max-width: 600px;
+    }
+    .help {
+        margin-left: 5rem;
+        margin-right: 5rem;
+        max-width: 600px;
+    }
+    .player {
+        width: 50%;
+        height: 50%;
+    }
+    #searchField {
+        display: inline-block;
+        padding: 10px 15px;
+        background-color: white;
+        border: 3px solid rgb(182, 147, 185);
+        width: 15rem;
+    }
+    .sbtn {
+        font-family: 'Roboto Mono', monospace;
+        font-weight: bold;
+        padding: 10px 10px;
+        text-align: center;
+        color: white;
+        background-color: rgb(107, 79, 110);
+        border: none;
+        display: inline-block;
+    }
 }

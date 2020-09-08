@@ -20,3 +20,12 @@ require get_template_directory() . '/lib/setup.php';
  * Register custom post types
  */
 require get_template_directory() . '/lib/custom-post-type.php';
+
+/**
+ * Register custom taxonomies
+ */
+// require get_template_directory() . '/lib/custom-taxonomies.php';
+/**
+ * ACF Setup
+ */
+// require get_template_directory() . '/lib/acf.php';

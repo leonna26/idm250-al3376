@@ -1,35 +1,35 @@
-<?php get_header();?>
-
-<section id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+<?php
+get_header();?>
+<main class="main-content">
+  <!-- Search -->
+  <section>
     <form action="/" method="get">
-      <label for="search">Search</label>
-      <input type="text" name="s" id="search" value="<?php the_search_query(); ?>" />
-      <input type="image" alt="Search" src="<?php bloginfo('template_url'); ?>/images/search.png" />
+      <h1><label for="searchField">Search</label></h1>
+      <input type="text" name="s" id="searchField" value="<?php the_search_query(); ?>">
+      <!-- <select name="post_type" id="">
+        <option value="" <?php echo $_GET['post_type'] == '' ? 'selected' : ''; ?>>All</option>
+        <option value="projects" <?php echo $_GET['post_type'] == 'projects' ? 'selected' : ''; ?>>Projects</option>
+        <option value="post" <?php echo $_GET['post_type'] == 'post' ? 'selected' : ''; ?>>Posts</option>
+      </select> -->
+      <input type="submit" value="search >>" class="sbtn">
     </form>
-		<?php if (have_posts()) : ?>
+  </section>
 
-			<header class="page-header">
-				<h1 class="page-title"><?php printf(__('Search Results for: %s', '_mbbasetheme'), '<span>' . get_search_query() . '</span>'); ?></h1>
-			</header><!-- .page-header -->
+  <!-- Results -->
+  <section>
+    <?php if (have_posts()): ?>
+      <ul>
+        <?php while (have_posts()) : the_post(); ?>
+        <a href="<?php the_permalink(); ?>">
+            <h2><?php the_title(); ?></h2>
+          <?php the_excerpt();?> 
+          </a>
+        <?php endwhile; ?>
+      </ul>
+    <?php else: ?>
+      <h2>Sorry, looks like there are no projects for that search. If you'd like some specific work done, contact me!</h2>
+    <?php endif; ?>
+  </section>
 
-			<?php /* Start the Loop */ ?>
-			<?php while (have_posts()) : the_post(); ?>
-      
-        <?php
-            the_title();
-
-                ?>
-
-			<?php endwhile; ?>
-
-
-		<?php else : ?>
-
-			<?php get_template_part('content', 'none'); ?>
-
-		<?php endif; ?>
-
-		</main><!-- #main -->
-  </section><!-- #primary -->
+</main>
 <?php get_footer(); ?>
